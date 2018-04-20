@@ -37,10 +37,6 @@
             <div class="col-md-12">
                 <table class="table" id="productTable">
                 </table>
-                <div style="float: right;" class="mt-2">
-                    <label>summary</label>
-                    <input type="text" id="sumInput" readonly class="mr-5">
-                </div>
                 <div style="text-align: center" class="form-group mt-5">
                     <label>max</label>
                     <input type="text" id="maxInput" readonly class="mr-5">
@@ -78,7 +74,9 @@
                     res.forEach(element => {
                         data.push(Object.values(element));
                     });
-                    console.log(res);
+
+                    console.log(columns);
+                    console.log(data);
                     $('#productTable').DataTable({
                         "data": data,
                         "columns": columns
