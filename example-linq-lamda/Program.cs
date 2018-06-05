@@ -51,7 +51,7 @@ namespace example_linq_lamda
             var fullNameAndYearCarList = carList.Select(s => new { carFullName = s.carName + " " + s.series, s.year}).ToList();
             fullNameAndYearCarList.ForEach(eachCar => Console.WriteLine(eachCar.carFullName + " " + eachCar.year));
 
-
+            Console.ReadKey();
         }
 
 
