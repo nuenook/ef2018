@@ -43,7 +43,7 @@ namespace MycosShopApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("MyPolicy");
             app.UseMvc();
         }
     }
