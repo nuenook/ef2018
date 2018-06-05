@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MycosShopUi", "MycosShopUi"
 		product.html = product.html
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "example-linq-lamda", "example-linq-lamda\example-linq-lamda.csproj", "{BC167D30-7CD1-45FE-88F3-C9EC03CD9E65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{56AF1CAB-4DE9-48F9-8B8D-FE5567C7FC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56AF1CAB-4DE9-48F9-8B8D-FE5567C7FC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56AF1CAB-4DE9-48F9-8B8D-FE5567C7FC3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC167D30-7CD1-45FE-88F3-C9EC03CD9E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC167D30-7CD1-45FE-88F3-C9EC03CD9E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC167D30-7CD1-45FE-88F3-C9EC03CD9E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC167D30-7CD1-45FE-88F3-C9EC03CD9E65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
