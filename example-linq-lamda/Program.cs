@@ -21,23 +21,26 @@ namespace example_linq_lamda
             peopleList.Add(new People() { _name = "nook", _score = 70 });
             peopleList.Add(new People() { _name = "nack", _score = 60 });
             peopleList.Add(new People() { _name = "nick", _score = 50 });
-            Console.WriteLine(peopleList);
+            Console.WriteLine(peopleList[1]._name);
             peopleList.ForEach(eachPeople => Console.WriteLine(eachPeople._name + " " + eachPeople._score));
 
             int scoreIsTop = peopleList.Max(m => m._score);
             Console.WriteLine(scoreIsTop);
 
             //who is top score
+            
             string whoIsTopScore = peopleList.Where(w => w._score == peopleList.Max(m => m._score)).Select(s => s._name).First();
             Console.WriteLine(whoIsTopScore);
 
 
             // who they are have score more than 50
+            List<string> whoIsScoreMore50 = peopleList.Where(w => w._score > 50).Select(s => s._name).ToList();
+            Console.WriteLine(whoIsScoreMore50);
 
 
 
             // print name and score order by score with asc
-
+            var peopleASC = peopleList.OrderBy(o => o._score).ToList();
 
 
 
@@ -66,7 +69,7 @@ namespace example_linq_lamda
         {
             public string carName { set; get; }
             public string series { set; get; }
-            public int year { set; get; }
+            public int? year { set; get; }
         }
         
     }

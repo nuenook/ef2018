@@ -21,8 +21,12 @@ namespace MycosShopApi.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            var item = _context.Products.Select(p => new { p.ProductId, p.ProductName, p.UnitPrice, VAT = ((float)p.UnitPrice * 0.07 + (float)p.UnitPrice) }).ToList();
-
+            var item = _context.OrderDetails
+                .Include(c => c.Order.Customer)
+                .Include(b => b.Product)        
+                .GroupBy(g => new { g.Order.Customer.CustomerId, g.Order.Customer.CompanyName, g.Order.Customer.ContactName })
+                .Select(s => new { s.Key.CustomerId, s.Key.CompanyName, s.Key.ContactName, totalSum = s.Sum(t => (float)t.UnitPrice * 0.07 + (float)t.UnitPrice) }).ToList();
+               
             return Ok(item);
         }
 
@@ -32,26 +36,42 @@ namespace MycosShopApi.Controllers
         {
             var max = _context.OrderDetails
                 .Include(c => c.Order.Customer)
-                .Include(b => b.Product).Max(m => m.UnitPrice * m.Quantity);
+                .GroupBy(g => new { g.Order.Customer.CustomerId})
+                .Select(s => new { maxSum = s.Sum(t => t.Quantity * t.UnitPrice) }).Max(m => m.maxSum);
+          
             return Ok(max);
         }
 
         [HttpGet("getmin")]
         public ActionResult GetMin()
-        {            
-            return Ok(0);
+        {
+            var min = _context.OrderDetails
+                .Include(c => c.Order.Customer)
+                .GroupBy(g => new { g.Order.Customer.CustomerId })
+                .Select(s => new { minSum = s.Sum(t => t.Quantity * t.UnitPrice) }).Min(m => m.minSum);
+
+            return Ok(min);
+            
         }
 
         [HttpGet("getavg")]
         public ActionResult GetAVG()
-        {            
-            return Ok(0);
+        {
+            var avg = _context.OrderDetails
+                .Include(c => c.Order.Customer)
+                .GroupBy(g => new { g.Order.Customer.CustomerId })
+                .Select(s => new { avgSum = s.Sum(t => t.Quantity * t.UnitPrice) }).Average(m => m.avgSum);
+
+            return Ok(avg);
         }
 
         [HttpGet("getsum")]
         public ActionResult GetSum()
         {
-            return Ok(0);
+            var sum = _context.OrderDetails
+                .Include(c => c.Order.Customer)
+                .Include(b => b.Product).Sum(m => m.UnitPrice * m.Quantity);
+            return Ok(sum);
         }
 
     }

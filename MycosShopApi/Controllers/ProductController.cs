@@ -54,7 +54,8 @@ namespace MycosShopApi.Controllers
         {
             try
             {
-                return Ok(0.00);
+                var min = _context.Products.Min(m => m.UnitPrice);
+                return Ok(min);
             }
             catch (Exception ex)
             {
@@ -68,7 +69,8 @@ namespace MycosShopApi.Controllers
         {
             try
             {
-                return Ok(0.00);
+                var avg = _context.Products.Average(m => m.UnitPrice);
+                return Ok(avg);
             }
             catch (Exception ex)
             {

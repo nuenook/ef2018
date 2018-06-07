@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MycosShopUi", "MycosShopUi"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simpleWebApi", "web-api\simple-web-api\simple-web-api\simpleWebApi.csproj", "{FEEE0949-B866-4DE5-B180-718E7E40BDB5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "example-linq-lamda", "example-linq-lamda\example-linq-lamda.csproj", "{9641DB23-FE59-4956-BF86-F412F5014051}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{81EE4958-097F-4029-87D8-D6A9987DD735}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{FEEE0949-B866-4DE5-B180-718E7E40BDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEEE0949-B866-4DE5-B180-718E7E40BDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEEE0949-B866-4DE5-B180-718E7E40BDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9641DB23-FE59-4956-BF86-F412F5014051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9641DB23-FE59-4956-BF86-F412F5014051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9641DB23-FE59-4956-BF86-F412F5014051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9641DB23-FE59-4956-BF86-F412F5014051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EE4958-097F-4029-87D8-D6A9987DD735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81EE4958-097F-4029-87D8-D6A9987DD735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81EE4958-097F-4029-87D8-D6A9987DD735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81EE4958-097F-4029-87D8-D6A9987DD735}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
